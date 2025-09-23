@@ -3,6 +3,10 @@ def main():
     """Main function"""
     password = get_password()
 
+    print_stars(password)
+
+
+def print_stars(password):
     for i in range(len(password)):
         print("*", sep=' ', end=' ')
 
