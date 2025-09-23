@@ -1,11 +1,19 @@
-"""Password Checker"""
-MIN_LENGTH = 5
-password = str(input("Enter your password: "))
-while len(password) < MIN_LENGTH:
-    print("Password must be at least 5 characters long")
+
+def main():
+    """Main function"""
+    password = get_password()
+
+    for i in range(len(password)):
+        print("*", sep=' ', end=' ')
+
+
+def get_password():
+    MIN_LENGTH = 5
     password = str(input("Enter your password: "))
+    while len(password) < MIN_LENGTH:
+        print("Password must be at least 5 characters long")
+        password = str(input("Enter your password: "))
+    return password
 
-for i in range(len(password)):
-    print("*", sep=' ', end=' ')
 
-
+main()
