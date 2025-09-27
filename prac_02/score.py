@@ -28,7 +28,7 @@ def generate_random_score():
     """Generates random score and prints status"""
     random_score = random.randint(1, 100)
     random_status = determine_score_status(random_score)
-    print(random_score)
+    print(random_status)
 
 
 main()
