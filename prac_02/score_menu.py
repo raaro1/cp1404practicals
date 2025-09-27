@@ -46,9 +46,7 @@ def determine_score_status(score):
 
 
 def print_stars(score):
-    """definite loop that prints (*) the length of the score"""
-    for i in range(score + 1):
-        print("*", sep=' ', end=' ')
-        print()
+    """prints (*) the length of the score"""
+    print("*" * score)
 
 main()
