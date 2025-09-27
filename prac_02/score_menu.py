@@ -3,7 +3,8 @@ import random
 def main():
     MENU = """(G)et a valid score
 (P)rint result
-(S)how stars (Q)uit"""
+(S)how stars
+(Q)uit"""
     print(MENU)
     choice = input(">>> ").upper()
     score = generate_valid_score()
@@ -20,8 +21,9 @@ def main():
 
         else:
             print("Invalid choice")
-            print(MENU)
-            choice = input(">>> ").upper()
+
+        print(MENU)
+        choice = input(">>> ").upper()
 
     print("Thank you for playing, farewell!")
 
@@ -45,7 +47,8 @@ def determine_score_status(score):
 
 def print_stars(score):
     """definite loop that prints (*) the length of the score"""
-    for i in range(score, + 1):
+    for i in range(score + 1):
         print("*", sep=' ', end=' ')
+        print()
 
 main()
