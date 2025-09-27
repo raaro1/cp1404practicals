@@ -1,7 +1,9 @@
 import random
 
 def main():
-    MENU = "(G)et a valid score  \n (P)rint result \n (S)how stars \n (Q)uit"
+    MENU = """(G)et a valid score
+(P)rint result
+(S)how stars (Q)uit"""
     print(MENU)
     choice = input(">>> ").upper()
     score = generate_valid_score()
