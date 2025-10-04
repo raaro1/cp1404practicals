@@ -23,6 +23,6 @@
 #     for line in out_file:
 #         total += int(line)
 #
-#     print(total)
+    # print(total)
 
 
