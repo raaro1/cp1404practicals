@@ -14,6 +14,7 @@ def main():
 def load_data(filename=FILENAME):
     """Read data from file formatted like: subject,lecturer,number of students."""
     input_file = open(filename)
+    data = []
     for line in input_file:
         print(line)  # See what a line looks like
         print(repr(line))  # See what a line really looks like
@@ -24,6 +25,6 @@ def load_data(filename=FILENAME):
         print(parts)  # See if that worked
         print("----------")
     input_file.close()
-
+    return data
 
 main()
