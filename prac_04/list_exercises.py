@@ -1,3 +1,4 @@
+# 1. Basic list operations
 numbers = []
 
 for i in range (5):
@@ -9,3 +10,6 @@ print(f"The last number is: {numbers[-1]}")
 print(f"The smallest number is: {min(numbers)}")
 print(f"The largest number is: {max(numbers)}")
 print(f"The average number is: {sum(numbers)/len(numbers)}")
+
+
+# 2. Woefully inadequate security checker
