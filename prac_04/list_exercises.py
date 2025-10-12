@@ -1,4 +1,4 @@
-# 1. Basic list operations
+# # 1. Basic list operations
 numbers = []
 
 for i in range (5):
@@ -13,3 +13,12 @@ print(f"The average number is: {sum(numbers)/len(numbers)}")
 
 
 # 2. Woefully inadequate security checker
+usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn',
+             'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
+
+username_input = input("Enter your username: ")
+
+if username_input in usernames:
+    print("Access granted")
+else:
+    print("Access denied")
