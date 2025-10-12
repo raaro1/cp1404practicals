@@ -7,9 +7,10 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    # data = load_data(FILENAME)
+    data = load_data(FILENAME)
+    print(data)
     print_subject_details(FILENAME)
-    # print(data)
+
 
 
 def load_data(filename=FILENAME):
