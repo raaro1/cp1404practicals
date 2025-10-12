@@ -7,8 +7,9 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    data = load_data(FILENAME)
-    print(data)
+    # data = load_data(FILENAME)
+    print_subject_details(FILENAME)
+    # print(data)
 
 
 def load_data(filename=FILENAME):
@@ -23,8 +24,15 @@ def load_data(filename=FILENAME):
         print(parts)  # See what the parts look like (notice the integer is a string)
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         print(parts)  # See if that worked
+        data.append(parts)
         print("----------")
     input_file.close()
     return data
 
+def print_subject_details(filename=FILENAME):
+    input_file = open(filename)
+    for line in input_file:
+        line = line.strip()
+        parts = line.split(',')
+        print(f"{parts[0]} is taught by {parts[1]} and has {parts[2]} students")
 main()
