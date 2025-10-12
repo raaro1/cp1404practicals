@@ -7,10 +7,9 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    data = load_data(FILENAME)
-    print(data)
+    subject_data = load_data(FILENAME)
+    print(subject_data)
     print_subject_details(FILENAME)
-
 
 
 def load_data(filename=FILENAME):
@@ -30,7 +29,9 @@ def load_data(filename=FILENAME):
     input_file.close()
     return data
 
+
 def print_subject_details(filename=FILENAME):
+    """Prints subject details."""
     input_file = open(filename)
     for line in input_file:
         line = line.strip()
