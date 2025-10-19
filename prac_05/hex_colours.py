@@ -1,4 +1,4 @@
-COLOR_CODES = {
+COLOR_TO_CODES = {
     "Absolute Zero": "#0048ba",
     "Acid Green": "#b0bf1a",
     "AliceBlue": "#f0f8ff",
