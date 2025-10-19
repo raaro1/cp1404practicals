@@ -1,7 +1,7 @@
 """
 emails
 Estimate: 40 minutes
-Actual:     minutes
+Actual:   37 minutes
 """
 
 EMAIL_TO_NAME = {}
