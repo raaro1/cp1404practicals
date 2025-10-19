@@ -1,12 +1,12 @@
 """
 Word Occurrences
 Estimate: 35 minutes
-Actual:    12 minutes
+Actual:    30 minutes
 """
 
 WORD_TO_OCCURRENCES = {}
 
-text = input("text: ")
+text = input("text: ").lower()
 
 for word in text.split():
     if word in WORD_TO_OCCURRENCES:
@@ -14,5 +14,7 @@ for word in text.split():
     else:
         WORD_TO_OCCURRENCES[word] = 1
 
-for words, occurrences in WORD_TO_OCCURRENCES.items():
-    print(f"{words}: {occurrences}")
+width = max(len(word) for word in WORD_TO_OCCURRENCES)
+
+for word, count in sorted(WORD_TO_OCCURRENCES.items()):
+    print(f"{word:{width}} : {count}")
