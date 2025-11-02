@@ -6,6 +6,7 @@ from prac_06.guitar import Guitar
 
 
 def run_test():
+    """Runs test use test attributes"""
     gibson = Guitar("Gibson L-5 CES", 1922, 16035.40)
     other = Guitar("Another Guitar", 2013, 1456.9)
 
