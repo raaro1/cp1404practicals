@@ -1,3 +1,7 @@
+"""
+Expected: 6 Minutes
+Actual: 7 Minutes
+"""
 from prac_06.guitar import Guitar
 
 

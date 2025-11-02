@@ -1,8 +1,3 @@
-"""
-Estimated: 30 minutes
-Actual:
-"""
-
 CURRENT_YEAR = 2025
 VINTAGE_AGE = 50
 
