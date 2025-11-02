@@ -14,7 +14,7 @@ class Guitar:
 
     def is_vintage(self):
         """Checks if object is vintage"""
-        return self.get_age() > VINTAGE_AGE
+        return self.get_age() >= VINTAGE_AGE
 
     def __str__(self):
         """Returns a string representation of the object"""
