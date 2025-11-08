@@ -160,7 +160,7 @@ def add_project():
     """Adds a project to the projects list"""
     print("Let's add a new project")
     name = input("Name: ")
-    start_date_str = input("Start date: ")
+    start_date_str = input("Start date (dd/mm/yy): ")
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost estimate: "))
     completion = int(input("Percent completion: "))
