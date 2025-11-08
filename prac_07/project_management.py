@@ -119,9 +119,8 @@ def filter_by_date(projects):
         print("Invalid date format. Please use dd/mm/yy")
         return
 
-    projects.sort(key=attrgetter("start_date"))
 
-    for project in projects:
+    for project in sorted(projects,key=attrgetter("start_date")):
         if  project.start_date >= filter_converted:
             print(project)
 
