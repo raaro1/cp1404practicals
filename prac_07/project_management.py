@@ -96,17 +96,17 @@ def display_projects(projects):
             completed_projects.append(project)
         else:
             incomplete_projects.append(project)
-    print("Completed projects:")
-    completed_projects.sort()
-    for project in completed_projects:
-        date_format = project.start_date.strftime("%d/%m/%Y")
-        print(f"   {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
 
     print("\nIncomplete projects:")
     incomplete_projects.sort()
     for project in incomplete_projects:
         date_format = project.start_date.strftime("%d/%m/%Y")
-        print(f"   {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
+        print(f"  {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
 
+    print("Completed projects:")
+    completed_projects.sort()
+    for project in completed_projects:
+        date_format = project.start_date.strftime("%d/%m/%Y")
+        print(f"  {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
 
 main()
