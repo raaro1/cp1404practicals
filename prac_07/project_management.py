@@ -42,7 +42,9 @@ def main():
             pass
         else:
             print("Invalid Input")
-            choice = input(">>> ").upper()
+
+        print(MENU)
+        choice = input(">>> ").upper()
 
 
 def load_data(filename):
