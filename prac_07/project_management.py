@@ -8,15 +8,13 @@ from datetime import datetime
 
 
 FILENAME = "projects.txt"
-MENU = """
-- (L)oad projects  
+MENU = """- (L)oad projects  
 - (S)ave projects  
 - (D)isplay projects  
 - (F)ilter projects by date
 - (A)dd new project  
 - (U)pdate project
-- (Q)uit
-"""
+- (Q)uit"""
 
 def main():
     project_data = load_data(FILENAME)
@@ -138,17 +136,23 @@ def update_project(project):
 
     print(projects[project_choice])
 
-    new_percentage = int(input("New percentage: "))
-    while new_percentage < 0 or new_percentage > 100:
-        print("Invalid choice")
-        new_percentage = int(input("New percentage: "))
+    try:
+        new_percentage = int(input("New Percentage: "))
+    except ValueError:
+        return
+
+    if new_percentage < 0 or new_percentage > 100:
+        return
 
     projects[project_choice].completion_percentage = new_percentage
 
-    new_priority = int(input("New priority: "))
-    while new_priority < 0 or new_priority > len(projects):
-        print("Invalid choice")
-        new_priority = int(input("New priority: "))
+    try:
+        new_priority = int(input("New Priority: "))
+    except ValueError:
+        return
+
+    if new_priority < 0 or new_priority > len(projects):
+        return
 
     projects[project_choice].priority = new_priority
 
