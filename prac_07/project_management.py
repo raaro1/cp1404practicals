@@ -5,7 +5,7 @@ Actual:
 
 from project import Project
 from datetime import datetime
-
+from operator import attrgetter
 
 FILENAME = "projects.txt"
 MENU = """- (L)oad projects  
@@ -119,7 +119,8 @@ def filter_by_date(projects):
         print("Invalid date format. Please use dd/mm/yy")
         return
 
-    projects.sort()
+    projects.sort(key=attrgetter("start_date"))
+
     for project in projects:
         if  project.start_date >= filter_converted:
             print(project)
@@ -162,7 +163,8 @@ def add_project():
     name = input("Name: ")
     start_date_str = input("Start date (dd/mm/yy): ")
     priority = int(input("Priority: "))
-    cost_estimate = float(input("Cost estimate: "))
+    cost_estimate_str = input("Cost estimate: ").strip("$")
+    cost_estimate = float(cost_estimate_str)
     completion = int(input("Percent completion: "))
 
     start_date = datetime.strptime(start_date_str, "%d/%m/%Y")
