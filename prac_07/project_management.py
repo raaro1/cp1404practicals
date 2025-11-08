@@ -4,7 +4,7 @@ Actual:
 """
 
 from project import Project
-# import datetime
+import datetime
 
 
 FILENAME = "projects.txt"
@@ -53,7 +53,8 @@ def load_data(filename):
         for line in in_file:
             parts = line.strip().split('\t')
             name = parts[0]
-            start_date = parts[1]
+            date = parts[1]
+            start_date = datetime.datetime.strptime(date, "%d/%m/%Y")
             priority = parts[2]
             cost_estimate = parts[3]
             completion = parts[4]
@@ -97,10 +98,13 @@ def display_projects(projects):
             incomplete_projects.append(project)
     print("Completed projects:")
     for project in completed_projects:
-        print(f"   {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
+        date_format = project.start_date.strftime("%d/%m/%Y")
+        print(f"   {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
+
     print("\nIncomplete projects:")
     for project in incomplete_projects:
-        print(f"   {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
+        date_format = project.start_date.strftime("%d/%m/%Y")
+        print(f"   {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
 
 
 main()
