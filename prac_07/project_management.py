@@ -20,8 +20,7 @@ MENU = """
 
 def main():
     project_data = load_data(FILENAME)
-    project_count = len(project_data)
-    print("Loaded {} projects from {}".format(project_count, FILENAME))
+    print("Loaded {} projects from {}".format(len(project_data), FILENAME))
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
