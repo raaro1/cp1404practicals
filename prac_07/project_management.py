@@ -35,15 +35,17 @@ def main():
         elif choice == "F":
             filter_by_date(project_data)
         elif choice == "A":
-            pass
+            new_project = add_project()
+            project_data.append(new_project)
         elif choice == "U":
-            pass
+            update_project(project_data)
         else:
             print("Invalid Input")
 
         print(MENU)
         choice = input(">>> ").upper()
 
+    save_projects(project_data)
 
 def load_data(filename):
     """Loads project data from file"""
@@ -100,12 +102,12 @@ def display_projects(projects):
     print("\nIncomplete projects:")
     incomplete_projects.sort()
     for project in incomplete_projects:
-        print(project)
+        print(f"  {project}")
 
     print("Completed projects:")
     completed_projects.sort()
     for project in completed_projects:
-        print(project)
+        print(f"  {project}")
 
 def filter_by_date(projects):
     filer_date = input("Show projects that start after date (dd/mm/yy): ")
@@ -124,6 +126,54 @@ def filter_by_date(projects):
         if  project.start_date >= filter_converted:
             print(project)
 
+def update_project(project):
+    projects = project
+    for index, project in enumerate(projects):
+        print(index, project)
+    project_choice = int(input("Select project index: "))
 
+    while project_choice < 0 or project_choice > len(projects):
+        print("Invalid choice")
+        project_choice = int(input("Select project index: "))
 
+    print(projects[project_choice])
+
+    new_percentage = int(input("New percentage: "))
+    while new_percentage < 0 or new_percentage > 100:
+        print("Invalid choice")
+        new_percentage = int(input("New percentage: "))
+
+    projects[project_choice].completion_percentage = new_percentage
+
+    new_priority = int(input("New priority: "))
+    while new_priority < 0 or new_priority > len(projects):
+        print("Invalid choice")
+        new_priority = int(input("New priority: "))
+
+    projects[project_choice].priority = new_priority
+
+def add_project():
+    """Adds a project to the projects list"""
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date_str = input("Start date: ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: "))
+    completion = int(input("Percent completion: "))
+
+    start_date = datetime.strptime(start_date_str, "%d/%m/%Y")
+
+    new_project = Project(name, start_date, priority, cost_estimate, completion)
+
+    return new_project
+
+def save_projects(projects):
+    """Save project data from a file selected by the user"""
+    save_choice = input(f"Would you like to save to {FILENAME}?: ").lower()
+    if save_choice in ("y", "yes"):
+        with open(FILENAME, "w", encoding="utf-8") as out_file:
+            for project in projects:
+                out_file.write(str(project + "\n"))
+
+    print("Thank you for using custom-built project management software.")
 main()
