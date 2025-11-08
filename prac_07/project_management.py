@@ -31,7 +31,7 @@ def main():
         elif choice == "S":
             save_data(project_data)
         elif choice == "D":
-            pass
+            display_projects(project_data)
         elif choice == "F":
             pass
         elif choice == "A":
@@ -84,7 +84,24 @@ def save_data(projects):
         chosen_file = input("Enter a file name: ")
     with open(chosen_file, "w", encoding="utf-8") as out_file:
         for project in projects:
-            out_file.write(str(project + "\m"))
+            out_file.write(str(project + "\n"))
+
+def display_projects(projects):
+    """Display projects in two groups: Unfinished and Finished"""
+    completed_projects = []
+    incomplete_projects = []
+    for project in projects:
+        if project.completion_percentage > 100:
+            completed_projects.append(project)
+        else:
+            incomplete_projects.append(project)
+    print("Completed projects:")
+    for project in completed_projects:
+        print(project)
+
+    print("\nIncomplete projects:")
+    for project in incomplete_projects:
+        print(project)
 
 
 main()
