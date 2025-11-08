@@ -28,9 +28,8 @@ def main():
             new_data = post_load_data()
             if new_data is not None:
                 project_data = new_data
-
         elif choice == "S":
-            pass
+            save_data(project_data)
         elif choice == "D":
             pass
         elif choice == "F":
@@ -76,4 +75,16 @@ def post_load_data():
     except FileNotFoundError:
         print("File not found")
         return None
+
+def save_data(projects):
+    """Save project data from a file selected by the user"""
+    chosen_file = input("Enter a file name: ")
+    while chosen_file == "":
+        print("No file selected")
+        chosen_file = input("Enter a file name: ")
+    with open(chosen_file, "w", encoding="utf-8") as out_file:
+        for project in projects:
+            out_file.write(str(project + "\m"))
+
+
 main()
