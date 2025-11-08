@@ -4,7 +4,7 @@ Actual:
 """
 
 from project import Project
-import datetime
+from datetime import datetime
 
 
 FILENAME = "projects.txt"
@@ -54,7 +54,7 @@ def load_data(filename):
             parts = line.strip().split('\t')
             name = parts[0]
             date = parts[1]
-            start_date = datetime.datetime.strptime(date, "%d/%m/%Y")
+            start_date = datetime.strptime(date, "%d/%m/%Y")
             priority = parts[2]
             cost_estimate = parts[3]
             completion = parts[4]
@@ -113,8 +113,14 @@ def filter_by_date(projects):
         print("No date selected")
         filer_date = input("Show projects that start after date (dd/mm/yy): ")
 
+    try:
+        filter_converted = datetime.strptime(filer_date, "%d/%m/%Y")
+    except ValueError:
+        print("Invalid date format. Please use dd/mm/yy")
+        return
+
     for project in projects:
-        if filer_date > project.start_date.strftime("%d/%m/%Y"):
+        if  project.start_date >= filter_converted:
             print(project)
 
 
