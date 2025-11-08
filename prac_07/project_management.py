@@ -17,6 +17,7 @@ MENU = """- (L)oad projects
 - (Q)uit"""
 
 def main():
+    """Acts as the main menu"""
     project_data = load_data(FILENAME)
     print("Loaded {} projects from {}".format(len(project_data), FILENAME))
     print(MENU)
@@ -88,6 +89,7 @@ def save_data(projects):
             out_file.write(str(project + "\n"))
 
 def display_projects(projects):
+    """Display project data from a file selected by the user"""
     """Display projects in two groups: Unfinished and Finished"""
     completed_projects = []
     incomplete_projects = []
@@ -108,6 +110,7 @@ def display_projects(projects):
         print(f"  {project}")
 
 def filter_by_date(projects):
+    """Filter projects by date"""
     filer_date = input("Show projects that start after date (dd/mm/yy): ")
     while filer_date == "":
         print("No date selected")
@@ -125,6 +128,7 @@ def filter_by_date(projects):
             print(project)
 
 def update_project(project):
+    """Updates project attributes"""
     projects = project
     for index, project in enumerate(projects):
         print(index, project)
