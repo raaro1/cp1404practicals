@@ -33,7 +33,7 @@ def main():
         elif choice == "D":
             display_projects(project_data)
         elif choice == "F":
-            pass
+            filter_by_date(project_data)
         elif choice == "A":
             pass
         elif choice == "U":
@@ -100,13 +100,23 @@ def display_projects(projects):
     print("\nIncomplete projects:")
     incomplete_projects.sort()
     for project in incomplete_projects:
-        date_format = project.start_date.strftime("%d/%m/%Y")
-        print(f"  {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
+        print(project)
 
     print("Completed projects:")
     completed_projects.sort()
     for project in completed_projects:
-        date_format = project.start_date.strftime("%d/%m/%Y")
-        print(f"  {project.name}, start: {date_format}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
+        print(project)
+
+def filter_by_date(projects):
+    filer_date = input("Show projects that start after date (dd/mm/yy): ")
+    while filer_date == "":
+        print("No date selected")
+        filer_date = input("Show projects that start after date (dd/mm/yy): ")
+
+    for project in projects:
+        if filer_date > project.start_date.strftime("%d/%m/%Y"):
+            print(project)
+
+
 
 main()
