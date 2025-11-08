@@ -17,11 +17,33 @@ MENU = """
 - (U)pdate project
 - (Q)uit
 """
+
 def main():
     project_data = load_data(FILENAME)
+    project_count = len(project_data)
+    print("Loaded {} projects from {}".format(project_count, FILENAME))
     print(MENU)
-    for project in project_data:
-        print(project)
+    choice = input(">>> ").upper()
+    while choice != "Q":
+        if choice == "L":
+            new_data = post_load_data()
+            if new_data is not None:
+                project_data = new_data
+
+        elif choice == "S":
+            pass
+        elif choice == "D":
+            pass
+        elif choice == "F":
+            pass
+        elif choice == "A":
+            pass
+        elif choice == "U":
+            pass
+        else:
+            print("Invalid Input")
+            choice = input(">>> ").upper()
+
 
 def load_data(filename):
     """Loads project data from file"""
@@ -39,5 +61,18 @@ def load_data(filename):
             projects.append(project_attributes)
         return projects
 
+def post_load_data():
+    """Post-load project data from a file selected by the user"""
+    chosen_file = input("Enter a file name: ")
+    if chosen_file == "":
+        print("No file selected")
+        return None
 
+    try:
+        projects = load_data(chosen_file)
+        print("Loaded {} projects from {}".format(len(projects), chosen_file))
+        return projects
+    except FileNotFoundError:
+        print("File not found")
+        return None
 main()
