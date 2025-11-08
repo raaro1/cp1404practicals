@@ -91,17 +91,17 @@ def display_projects(projects):
     completed_projects = []
     incomplete_projects = []
     for project in projects:
-        if project.completion_percentage > 100:
+        if project.completion_percentage == 100:
             completed_projects.append(project)
         else:
             incomplete_projects.append(project)
     print("Completed projects:")
     for project in completed_projects:
         print(project)
-
+        print(f"   {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
     print("\nIncomplete projects:")
     for project in incomplete_projects:
-        print(project)
+        print(f"   {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate:.2f}, {project.completion_percentage}%")
 
 
 main()
