@@ -15,6 +15,7 @@ class ConvertMilesKm(App):
         return self.root
 
     def handle_increment_change(self,increment):
+        """Handles when up and down button is used"""
         try:
             value = float(self.root.ids.user_input.text)
             value += increment
@@ -25,6 +26,7 @@ class ConvertMilesKm(App):
             self.root.ids.user_input.text = str(value)
 
     def handle_convert_input(self, value):
+        """Handles converting then input in miles"""
         try:
             result = float(value) * CONVERSION_VALUE
             self.output_text = str(result)
