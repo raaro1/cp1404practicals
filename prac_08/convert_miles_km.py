@@ -2,6 +2,8 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
+CONVERSION_VALUE = 1.60934
+
 class ConvertMilesKm(App):
     """An App that converts miles to kilometers"""
     output_text = StringProperty()
@@ -24,7 +26,7 @@ class ConvertMilesKm(App):
 
     def handle_convert_input(self, value):
         try:
-            result = float(value) * 1.60934
+            result = float(value) * CONVERSION_VALUE
             self.output_text = str(result)
         except ValueError:
             self.output_text = "0.0"
