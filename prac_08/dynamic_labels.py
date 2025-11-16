@@ -9,3 +9,11 @@ class DynamicLabel(App):
         self.root = Builder.load_file('dynamic_labels.kv')
         self.create_labels()
         return self.root
+
+    def create_labels(self):
+        """Create the labels and dynamically updates them"""
+        for name in self.names:
+            dynamic_label = DynamicLabel(text=name)
+            self.root.ids.main.add_widget(dynmaic_label)
+
+DynamicLabel().run()
