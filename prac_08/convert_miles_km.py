@@ -4,7 +4,7 @@ from kivy.properties import StringProperty
 
 class ConvertMilesKm(App):
     """An App that converts miles to kilometers"""
-    output_text = StringProperty
+    output_text = StringProperty('0')
 
     def build(self):
         """ build the Kivy app from the kv file """
@@ -13,13 +13,21 @@ class ConvertMilesKm(App):
         return self.root
 
     def handle_increment_change(self,increment):
-        value = float(self.root.ids.user_input.text)
-        value += increment
-        self.root.ids.user_input.text = str(value)
+        try:
+            value = float(self.root.ids.user_input.text)
+            value += increment
+            self.root.ids.user_input.text = str(value)
+        except ValueError:
+            value = 0
+            value += increment
+            self.root.ids.user_input.text = str(value)
 
     def handle_convert_input(self, value):
-        result = float(value) * 1.60934
-        self.root.ids.output_label.text = str(result)
+        try:
+            result = float(value) * 1.60934
+            self.output_text = str(result)
+        except ValueError:
+            self.output_text = "0.0"
 
 
 ConvertMilesKm().run()
