@@ -4,7 +4,7 @@ from kivy.properties import StringProperty
 
 class ConvertMilesKm(App):
     """An App that converts miles to kilometers"""
-    output_text = StringProperty('0')
+    output_text = StringProperty()
 
     def build(self):
         """ build the Kivy app from the kv file """
