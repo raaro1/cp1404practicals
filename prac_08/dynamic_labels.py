@@ -6,6 +6,7 @@ class DynamicLabel(App):
     """Dynamic adds labels to a Label widget"""
 
     def __init__(self, **kwargs):
+        """Initialize the list of names """
         super().__init__(**kwargs)
         self.names = ["Roi","Crispin","Cody", "Thaedyn", "Ethann"]
 
@@ -13,13 +14,13 @@ class DynamicLabel(App):
         """Build the Kivy app from the kv file."""
         self.title = "Dynamic Labels"
         self.root = Builder.load_file('dynamic_labels.kv')
-        self.create_labels()
+        self.make_labels()
         return self.root
 
-    def create_labels(self):
-        """Create the labels and dynamically updates them"""
+    def make_labels(self):
+        """Makes the labels and dynamically updates them"""
         for name in self.names:
-            dynamic_label = DynamicLabel(text=name)
-            self.root.ids.main.add_widget(dynmaic_label)
+            dynamic_label = Label(text=name)
+            self.root.ids.main.add_widget(dynamic_label)
 
 DynamicLabel().run()
