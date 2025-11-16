@@ -3,6 +3,12 @@ from kivy.lang import Builder
 from kivy.uix.label import Label
 
 class DynamicLabel(App):
+    """Dynamic adds labels to a Label widget"""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.names = ["Roi","Crispin","Cody", "Thaedyn", "Ethann"]
+
     def build(self):
         """Build the Kivy app from the kv file."""
         self.title = "Dynamic Labels"
