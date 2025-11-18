@@ -1,0 +1,6 @@
+Name	Start Date	Priority	Cost Estimate	Completion Percentage
+Build Shed	05/03/2023	2	750.0	40
+Paint House	10/11/2022	4	1500.0	100
+Write Novel	01/01/2024	1	0.0	15
+Learn Guitar	15/06/2023	3	300.0	60
+Open Café	25/09/2022	5	120000.0	85
