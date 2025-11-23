@@ -1,7 +1,7 @@
 from prac_09.taxi import Taxi
 
 class SilverServiceTaxi(Taxi):
-    """ Adds different classes of taxi services to a Taxi instance. """
+    """Adds different classes of taxi services to a Taxi instance."""
     flag_fall = 4.50
 
     def __init__(self, name, fuel, fanciness):
