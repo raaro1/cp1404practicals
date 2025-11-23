@@ -21,4 +21,4 @@ class SilverServiceTaxi(Taxi):
 
 
     def __str__(self):
-        return f"{super().__str__()} plus flagfall of ${self.flag_fall}"
+        return f"{super().__str__()} plus flagfall of ${self.flag_fall:.2f}"
