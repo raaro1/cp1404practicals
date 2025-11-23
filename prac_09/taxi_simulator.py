@@ -13,10 +13,11 @@ def main():
     choice = input(">>> ").lower()
     while choice != "q":
         if choice == "d":
-            ...
-        elif choice == "d"
-            ...
-        else
+            trip_cost = drive_taxi(current_taxi)
+            bill_to_date += trip_cost
+        elif choice == "c":
+            current_taxi = choose_taxi(taxis)
+        else:
             print("Invalid Option")
     
         print(f"Bill to date: ${bill_to_date:.2f}")
