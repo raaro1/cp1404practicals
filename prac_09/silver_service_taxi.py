@@ -19,11 +19,6 @@ class SilverServiceTaxi(Taxi):
         """Begin a new fare."""
         self.current_fare_distance = 0
 
-    def drive(self, distance):
-        """Drive like parent Car but calculate fare distance as well."""
-        distance_driven = super().drive(distance)
-        self.current_fare_distance += distance_driven
-        return distance_driven
 
     def __str__(self):
         return f"{super().__str__()} plus flagfall of ${self.flag_fall}"
