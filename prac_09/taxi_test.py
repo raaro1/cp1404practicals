@@ -8,6 +8,4 @@ def main():
     my_taxi.drive(100)
     print(my_taxi, my_taxi.get_fare())
 
-
-
 main()
