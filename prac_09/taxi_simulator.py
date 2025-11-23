@@ -28,8 +28,17 @@ def drive_taxi(taxi,current_taxi):
         return
 
 
-def choose_taxi(taxi):
-    """ """
-    
+def choose_taxi(taxis):
+    """Chooses a taxi out of a list"""
+    print("Taxis available")
+    for index, taxi in enumerate(taxis):
+        print(f"{index} - {taxi}")
+
+    choice = int(input("choose taxi: "))
+    if choice > len(taxis) or choice < 0:
+        print("Invalid choice")
+        return None
+    else:
+        return taxis[choice]
 
 main()
