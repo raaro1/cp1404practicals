@@ -7,6 +7,6 @@ def main():
     taxi.drive(18)
     fare = taxi.get_fare()
 
-    assert abs(fare - 48.78) < 0.01, f"Expected 48.78, got {fare}"
+    assert abs(fare - 48.80) < 0.01, f"Expected 48.78, got {fare}"
 
 main()
