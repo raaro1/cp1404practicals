@@ -9,7 +9,9 @@ class SilverServiceTaxi(Taxi):
         super().__init__(name,fuel)
         self.fanciness = fanciness * Taxi.price_per_km
 
-    def calculate_flag_fare(self):
+    def get_fare(self):
+        """Return the price for the taxi trip."""
+        return self.fanciness * self.current_fare_distance
 
 
 
