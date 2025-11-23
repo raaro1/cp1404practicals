@@ -54,8 +54,8 @@ def choose_taxi(taxis):
         print(f"{index} - {taxi}")
 
     choice = int(input("choose taxi: "))
-    if choice > len(taxis) or choice < 0:
-        print("Invalid choice")
+    if choice >= len(taxis) or choice < 0:
+        print("Invalid taxi choice")
         return None
     else:
         return taxis[choice]
