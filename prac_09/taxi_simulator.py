@@ -19,7 +19,7 @@ def main():
             current_taxi = choose_taxi(taxis)
         else:
             print("Invalid Option")
-    
+
         print(f"Bill to date: ${bill_to_date:.2f}")
         print(MENU)
         choice = input(">>> ").lower()
