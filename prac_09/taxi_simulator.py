@@ -49,7 +49,7 @@ def drive_taxi(current_taxi):
 
 def choose_taxi(taxis):
     """Chooses a taxi out of a list"""
-    print("Taxis available")
+    print("Taxis available:")
     for index, taxi in enumerate(taxis):
         print(f"{index} - {taxi}")
 
