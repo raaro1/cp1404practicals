@@ -9,6 +9,7 @@ def main():
     current_taxi = None
     bill_to_date = 0
     print(f"Let's drive! \n{MENU}")
+
     choice = input(">>> ").lower()
     while choice != "q":
         if choice == "d":
