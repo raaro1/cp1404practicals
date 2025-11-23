@@ -26,5 +26,8 @@ def drive_taxi(taxi,current_taxi):
         return
 
 
+def choose_taxi(taxi):
+    """ """
+    
 
 main()
