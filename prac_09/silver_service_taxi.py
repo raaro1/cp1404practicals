@@ -15,6 +15,7 @@ class SilverServiceTaxi(Taxi):
         fare = super().get_fare()
         return fare + self.flag_fall
 
+
     def start_fare(self):
         """Begin a new fare."""
         self.current_fare_distance = 0
