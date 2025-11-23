@@ -24,8 +24,15 @@ def main():
         print(MENU)
         choice = input(">>> ").lower()
 
-def drive_taxi(taxi,current_taxi):
-    """ """
+    print(f"Total trip cost: {bill_to_date:.2f}")
+    print("Taxis are now:")
+    for index, taxi in enumerate(taxis):
+        print(f"{index} - {taxi}")
+
+
+
+def drive_taxi(current_taxi):
+    """Uses current taxi to drive given distance"""
     if current_taxi is None:
         print("You need to choose a taxi before you can drive")
         return
