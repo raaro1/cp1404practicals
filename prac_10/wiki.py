@@ -1,9 +1,17 @@
 import wikipedia
 
-search_phrase = input('Enter a search phrase: ')
-while search_phrase != '':
-    results = wikipedia.search(search_phrase)
-    print(results)
+
+def search_pages():
+    """"""
+    search_phrase = input('Enter a page title: ')
+    while search_phrase != '':
+        try:
+            page = wikipedia.page(search_phrase)
+        except DisambiguationError as e:
+            print("We need a more specific title. Try one of the following, or a new search:")
+            print(e.options)
+            print()
+
 
         except PageError:
             print(f"Page id '{search_phrase}' does not match any pages. Try another id!.")
