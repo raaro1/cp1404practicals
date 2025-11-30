@@ -4,7 +4,7 @@ from wikipedia import PageError
 
 
 def search_pages():
-    """"""
+    """Uses search phrases to search for pages in wikipedia API"""
     search_phrase = input('Enter a page title: ')
     while search_phrase != '':
         try:
