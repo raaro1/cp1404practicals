@@ -18,3 +18,15 @@ def search_pages():
         except PageError:
             print(f"Page id '{search_phrase}' does not match any pages. Try another id!.")
             print()
+
+        else:
+            print()
+            print(page.title)
+            print(page.summary)
+            print(page.url)
+
+        search_phrase = input('Enter a page title: ')
+    print()
+    print("Thank you.")
+
+search_pages()
