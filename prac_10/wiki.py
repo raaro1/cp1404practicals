@@ -1,4 +1,6 @@
 import wikipedia
+from wikipedia import DisambiguationError
+from wikipedia import PageError
 
 
 def search_pages():
